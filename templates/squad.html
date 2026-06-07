@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Squad Tournament</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/squad.css') }}">
+</head>
+<body>
+  <a href="/">
+    <img src="{{ url_for('static', filename='images/ESPORTS.png') }}" class="logo" alt="Logo" />
+  </a>
+  <div class="container">
+    <h1>Squad Tournament - Choose Your Slot</h1>
+    <div class="slot-buttons">
+      <button id="slot6pm">6:00 PM</button>
+      <button id="slot9pm">9:00 PM</button>
+      <button id="bigTournament">Big Tournament</button>
+    </div>
+  </div>
+
+  <!-- Modal for 6pm & 9pm slots -->
+  <div id="squadModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="squadClose">&times;</span>
+      <h2 id="modalTitle">Squad Registration</h2>
+      <form action="/register-squad" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="slot" id="slotInput" value="">
+        <input type="text" name="name" placeholder="Team Name" required>
+        <input type="text" name="uid" placeholder="UID" required>
+        <input type="text" name="mobile" placeholder="Mobile Number" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <p>Upload payment screenshot:</p>
+        <input type="file" name="screenshot" accept="image/*" required>
+        <div class="qr-section">
+          <p>Scan this QR to pay:</p>
+          <img src="{{ url_for('static', filename='images/qr.jpeg') }}" alt="QR Code" class="qr-img">
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Big Tournament info modal -->
+  <div id="bigModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="bigClose">&times;</span>
+      <h2>Big Tournament</h2>
+      <p>This mode is currently locked. Please check back later!</p>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/squad.js') }}"></script>
+</body>
+</html>

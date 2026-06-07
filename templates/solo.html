@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solo Tournament</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/solo.css') }}">
+</head>
+<body>
+  <header>
+    <a href="/">
+        <img src="{{ url_for('static', filename='images/ESPORTS.png') }}" class="logo" alt="Logo" />
+      </a>
+  </header>
+  <div class="container">
+    <h1>Solo Tournament - Choose Your Slot</h1>
+    <div class="slot-buttons">
+      <button class="6PM" id="slot6pm">6:00 PM</button>
+      <button id="slot9pm">9:00 PM</button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="soloModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="soloClose">&times;</span>
+      <h2 id="modalTitle">Solo Registration</h2>
+      <form action="/register-solo" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="slot" id="slotInput" value="">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="uid" placeholder="UID" required>
+        <input type="text" name="mobile" placeholder="Mobile Number" required>
+        <input type="number" name="age" placeholder="Age" required>
+        <input type="number" name="level" placeholder="Level" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <p>Upload payment screenshot:</p>
+        <input type="file" name="screenshot" accept="image/*" required>
+        <div class="qr-section">
+          <p>Scan this QR to pay:</p>
+          <img src="{{ url_for('static', filename='images/qr.jpeg') }}" alt="QR Code" class="qr-img">
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/solo.js') }}"></script>
+</body>
+</html>

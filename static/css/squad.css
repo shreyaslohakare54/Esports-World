@@ -1,0 +1,158 @@
+body {
+  font-family: Arial, sans-serif;
+  background: url("../images/k.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+.logo {
+  height: 200px;
+  position: absolute;
+  top: -61px;
+  left: -10px;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  margin-top: 60px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.slot-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+}
+
+.slot-buttons button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 20px 40px;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slot-buttons button:hover {
+  background: #cc0000;
+}
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #111;
+  padding: 25px;
+  border-radius: 12px;
+  width: 360px;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.modal-content .close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+}
+
+.modal-content input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+.modal-content button {
+  width: 100%;
+  background: red;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.qr-section {
+  margin: 15px 0;
+}
+
+.qr-img {
+  max-width: 150px;
+  border-radius: 12px;
+  border: 2px solid white;
+}
+/* Extra-large 6 PM button with background */
+button#slot6pm {
+  width: 340px;
+  height: 200px;
+  background: url("../images/6pm.png") no-repeat center center;
+  background-size: cover;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button#slot6pm:hover {
+  transform: scale(1.05);
+}
+
+/* Extra-large 9 PM button with background */
+button#slot9pm {
+  width: 340px;
+  height: 200px;
+  background: url("../images/9pm.png") no-repeat center center;
+  background-size: cover;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button#slot9pm:hover {
+  transform: scale(1.05);
+}
+button#slot6pm,
+button#slot9pm {
+  color: transparent;       /* Hide the text */
+  text-shadow: none;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>World Esports</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+  <div class="bg">
+    <header>
+        <a href="/">
+            <img src="{{ url_for('static', filename='images/ESPORTS.png') }}" class="logo" alt="Logo" />
+      </a>
+      <button class="signin-btn" id="signinBtn">Sign In</button>
+    </header>
+
+    <div class="center-text">
+      <h1>Unlimited Tournaments</h1>
+      <p><h3>Best way for your carrer in esports</h3></p>
+      <p>Battle begins here.</p>
+      <button onclick="scrollToTournaments()">Ready ?</button>
+      <br>
+      <br>
+    <div class="credit-bar">
+     <img src="{{ url_for('static', filename='images/rocky.jpeg') }}" alt="Rocky Bhai" class="rocky-img">
+    <span>Credits:</span>
+    <div class="scrolling-link">
+        <a href="https://www.youtube.com/@ROCKYRDX" target="_blank">
+        https://www.youtube.com/@ROCKYRDX
+        </a>
+    </div>
+    </div>
+    <br>
+    <div class="credit-bar">
+     <img src="{{ url_for('static', filename='images/abjonty.jpeg') }}" class="rocky-img" alt="AB Jonty">
+    <span>Credits:</span>
+    <div class="scrolling-link">
+        <a href="https://www.youtube.com/@jontygaming" target="_blank">
+            https://www.youtube.com/@abjonty</a>
+    </div>
+    </div>
+    </div>
+    </div>
+
+  <section id="tournaments" class="tournament-section">
+    <div class="card" onclick="window.location.href='/solo'">
+      <img src="{{ url_for('static', filename='images/solo.jpeg') }}" alt="Solo">
+      <h3>Solo Tournament</h3>
+    </div>
+    <div class="card" onclick="window.location.href='/squad'">
+      <img src="{{ url_for('static', filename='images/squad.jpeg') }}" alt="Squad">
+      <h3>Squad Tournament</h3>
+    </div>
+    <div class="card" onclick="window.location.href='/clash'">
+      <img src="{{ url_for('static', filename='images/cs.jpeg') }}" alt="Clash Squad">
+      <h3>Clash Squad (Coming Soon)</h3>
+    </div>
+  </section>
+
+  <!-- Sign In Modal -->
+  <div id="signinModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="signinClose">&times;</span>
+      <form action="/signin" method="POST">
+        <h2>Sign In</h2>
+        <input type="text" name="username" placeholder="Username" required><br>
+        <input type="email" name="email" placeholder="Email ID" required><br>
+        <input type="password" name="password" placeholder="Password" required><br>
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>
