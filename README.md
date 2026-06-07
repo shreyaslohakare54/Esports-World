@@ -1,6 +1,6 @@
 # Screenshots
 
-![](screenshots/Screenshot%202026-06-07%20143124.png)
+![](Uploads/Screenshot%202026-06-07%20143124.png)
 
 ![](screenshots/Screenshot%202026-06-07%20143146.png)
 
